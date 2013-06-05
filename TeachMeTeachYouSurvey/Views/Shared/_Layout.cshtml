@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <header>
+        <section id="siteTitle">
+            <a id="officialSiteLnk" href="http://www.codejapan.jp/" target="_blank"></a>
+            <span>2013 Teach Me・Teach You - Survey</span>
+        </section>
+        <section id="signInOut">
+            @RenderSection("signInOut", required: false)
+        </section>
+    </header>
+
+    <div id="body">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

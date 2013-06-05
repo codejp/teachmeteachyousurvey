@@ -1,0 +1,38 @@
+﻿@model TeachMeTeachYouSurvey.Models.Theme
+@using TeachMeTeachYouSurvey
+<div class="theme" data-themeid="@Model.ThemeId">
+
+    <div class="description">@Model.Description</div>
+
+    <div class="votes">
+        <span class="numOfVotes">@Model.Votes.Count() Votes</span>
+        @foreach (var vote in Model.Votes)
+        {
+            <div class="vote" style='@("background-color: #" + vote.Owner.Substring(0,6))'></div>
+        }
+    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    { 
+        <div class="actions">
+            @if (User.Identity.UserId() == Model.Owner)
+            {
+                <a href="#" class="edit">edit</a>
+                <a href="#" class="delete">delete</a>
+            }
+            else
+            {
+                if (Model.Votes.Any(v => v.Owner == User.Identity.UserId()))
+                {
+                <a href="#" class="revert">revert</a>
+                }
+                else
+                { 
+                <a href="#" class="vote">vote</a>
+                }
+            }
+        </div>
+    }
+</div>
+
+

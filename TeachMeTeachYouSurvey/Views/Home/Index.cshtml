@@ -1,0 +1,31 @@
+﻿@model TeachMeTeachYouSurvey.Models.IndexViewModel
+@{
+    ViewBag.Title = "Code 2013 Teach Me・Teach You - Survey";
+}
+@section signInOut{
+    @Html.Partial("_LoginPartial")
+}
+
+@foreach (var item in Model.ThemesPerType)
+{
+    <section id='@("themesOf" + item.Key)' class="themes">
+
+        <h4>@item.Key</h4>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="actions common">
+                @Html.ActionLink("Post New Theme", "Post", new { themeType = item.Key })
+            </div>
+        }
+
+        @foreach (var theme in item.Value)
+        {
+            <div>@Html.Partial("_Theme", theme)</div>
+        }
+    </section>
+}
+
+@section Scripts{
+    <script src="~/Scripts/homeIndex.js"></script>
+}

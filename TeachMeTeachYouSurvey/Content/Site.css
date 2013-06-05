@@ -1,0 +1,158 @@
+﻿body {
+    font-family: Meiryo, Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+
+header {
+    padding: 0.5em;
+    background-color: #444;
+    color: #ccc;
+    height: 3em;
+}
+
+#siteTitle {
+    float: left;
+}
+
+    #siteTitle span {
+        float: left;
+        line-height: 50px;
+    }
+
+#officialSiteLnk {
+    float: left;
+    background-image: url(images/codelogo-mono-black.png);
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100px;
+    margin-right: 8px;
+}
+
+#signInOut {
+    float: right;
+}
+
+#signInLnk,
+#signOutLnk {
+    color: #ccc;
+    text-decoration: none;
+    background-color: #666;
+    display: inline-block;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border-radius: 6px;
+    font-size: 80%;
+}
+
+#signInLnk {
+    background-color: #0094ff;
+    color: #fff;
+}
+
+#body {
+    margin: 1em;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
+.actions {
+    margin-top: 0.5em;
+}
+
+    .actions a,
+    .actions input {
+        text-decoration: none;
+        font-size: 90%;
+        background-color: #666;
+        padding: 0 0.3em 0 0.3em;
+        color: #fff;
+        border: none;
+        height: 1.5em;
+        line-height: 1.5em;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .actions .ok {
+        background-color: #0094ff;
+    }
+
+    .actions .ok,
+    .actions .cancel {
+        width: 4.5em;
+    }
+
+    .actions a:hover,
+    .actions input:hover {
+        opacity: 0.8;
+    }
+
+.themes {
+    width: 23em;
+    display: inline-block;
+    float: left;
+    border-right: solid 1px #ccc;
+}
+
+    .themes .actions.common {
+        text-align: center;
+    }
+
+        .themes .actions.common a {
+            padding-top: 0.2em;
+            padding-bottom: 0.2em;
+        }
+
+            .themes .actions.common a:before {
+                display: inline-block;
+                content: "+";
+                border: solid 1px #ccc;
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+                border-radius: 0.5em;
+                margin-right: 0.5em;
+            }
+
+    .themes h4 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+.theme {
+    background-color: #ddd;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    height: 6em;
+    -webkit-box-shadow: 1px 1px 3px #666;
+    box-shadow: 1px 1px 3px #666;
+    position: relative;
+}
+
+    .theme .votes {
+        position: absolute;
+        right: 0.3em;
+        bottom: 0.3em;
+    }
+
+        .theme .votes .numOfVotes {
+            font-size: 60%;
+        }
+
+        .theme .votes .vote {
+            display: inline-block;
+            width: 0.5em;
+            height: 0.5em;
+        }
+
+    .theme .actions {
+        position: absolute;
+        bottom: 0.5em;
+    }
+
+.themeEditor textarea {
+    width: 30em;
+    height: 10em;
+}

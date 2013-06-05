@@ -1,0 +1,6 @@
+﻿@if (Request.IsAuthenticated) {
+    <span>Hello, @User.Identity.Name</span>
+    <span><a id="signOutLnk" href="#">Sign out</a></span>
+} else {
+    <span>@Html.ActionLink("Sign in", "SignIn", "Account", routeValues: null, htmlAttributes: new { id = "signInLnk" })</span>
+}

@@ -1,0 +1,8 @@
+﻿@model TeachMeTeachYouSurvey.Models.ThemeEditorViewModel
+@{
+    ViewBag.Title = "Post New Theme";
+    Html.RenderPartial("_ThemeEditor", Model);
+}
+@section scripts {
+    @Scripts.Render("~/bundles/editor")
+}
