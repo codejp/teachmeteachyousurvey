@@ -5,7 +5,7 @@
     <div class="description">@Model.Description</div>
 
     <div class="votes">
-        <span class="numOfVotes">@Model.Votes.Count() Votes</span>
+        <span class="numOfVotes">@Model.Votes.Count() 票</span>
         @foreach (var vote in Model.Votes)
         {
             <div class="vote" style='@("background-color: #" + vote.Owner.Substring(0,6))'></div>
@@ -17,18 +17,18 @@
         <div class="actions">
             @if (User.Identity.UserId() == Model.Owner)
             {
-                <a href="#" class="edit">edit</a>
-                <a href="#" class="delete">delete</a>
+                <a href="#" class="edit">編集</a>
+                <a href="#" class="delete">削除</a>
             }
             else
             {
                 if (Model.Votes.Any(v => v.Owner == User.Identity.UserId()))
                 {
-                <a href="#" class="revert">revert</a>
+                <a href="#" class="revert">撤回</a>
                 }
                 else
                 { 
-                <a href="#" class="vote">vote</a>
+                <a href="#" class="vote">投票</a>
                 }
             }
         </div>

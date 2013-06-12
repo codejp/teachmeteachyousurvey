@@ -1,6 +1,7 @@
 ﻿@model TeachMeTeachYouSurvey.Models.ThemeEditorViewModel
+@using TeachMeTeachYouSurvey.Views
 
-<h2>@Model.ThemeType - @ViewBag.Title</h2>
+<h2>@_Localize.ResourceManager.GetString(Model.ThemeType.ToString()) - @ViewBag.Title</h2>
 
 <div class="themeEditor">
 @using (Html.BeginForm())
@@ -14,7 +15,7 @@
 
     <p class="actions">
         <input type="submit" value="OK" class="ok"/>
-        @Html.ActionLink("Cancel", "Index", null, new { @class = "cancel" })
+        @Html.ActionLink("キャンセル", "Index", null, new { @class = "cancel" })
     </p>
 }
 </div>

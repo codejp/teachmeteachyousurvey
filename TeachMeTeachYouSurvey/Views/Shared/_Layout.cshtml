@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using TeachMeTeachYouSurvey.Views
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title - @_Localize.SiteTitle</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/favicon.png" rel="icon" type="image/png" />
     <meta name="viewport" content="width=device-width" />
@@ -12,8 +13,8 @@
 <body>
     <header>
         <section id="siteTitle">
-            <a id="officialSiteLnk" href="http://www.codejapan.jp/" target="_blank"></a>
-            <span>2013 Teach Me・Teach You - Survey</span>
+            <a id="officialSiteLnk" href="http://www.codejapan.jp/" target="_blank" title="Code 2013"></a>
+            <span>@_Localize.SiteTitle</span>
         </section>
         <section id="signInOut">
             @RenderSection("signInOut", required: false)

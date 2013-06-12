@@ -1,6 +1,7 @@
 ﻿@model TeachMeTeachYouSurvey.Models.IndexViewModel
+@using TeachMeTeachYouSurvey.Views
 @{
-    ViewBag.Title = "Code 2013 Teach Me・Teach You - Survey";
+    ViewBag.Title = "Home";
 }
 @section signInOut{
     @Html.Partial("_LoginPartial")
@@ -10,12 +11,12 @@
 {
     <section id='@("themesOf" + item.Key)' class="themes">
 
-        <h4>@item.Key</h4>
+        <h4>@_Localize.ResourceManager.GetString(item.Key)</h4>
 
         @if (User.Identity.IsAuthenticated)
         {
             <div class="actions common">
-                @Html.ActionLink("Post New Theme", "Post", new { themeType = item.Key })
+                @Html.ActionLink("テーマを投稿", "Post", new { themeType = item.Key })
             </div>
         }
 
