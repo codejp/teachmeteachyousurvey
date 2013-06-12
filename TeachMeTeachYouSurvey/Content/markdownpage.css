@@ -1,0 +1,21 @@
+﻿.markdown-content {
+    margin-left: 2em;
+    max-width: 50em;
+}
+
+h4 {
+    margin: 2em 0 1em -1em;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 0.5em 0 0.5em 0;
+}
+
+ul {
+    margin-left: 1em;
+}
+
+li {
+    line-height: 1.5em;
+}

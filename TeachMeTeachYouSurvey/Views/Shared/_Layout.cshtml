@@ -9,6 +9,7 @@
     <link href="~/favicon.png" rel="icon" type="image/png" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
+    @RenderSection("header", required: false)
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
             @RenderSection("signInOut", required: false)
         </section>
     </header>
-
+    @RenderSection("preBody", required: false)
     <div id="body">
         @RenderBody()
     </div>

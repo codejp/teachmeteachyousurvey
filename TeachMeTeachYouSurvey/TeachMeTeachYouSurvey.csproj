@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -210,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\codelogo-mono-black.png" />
+    <Content Include="Content\markdownpage.css" />
     <Content Include="favicon.ico" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
@@ -247,6 +251,8 @@
     <Content Include="Views\Home\_Theme.cshtml" />
     <Content Include="Views\Home\_ThemeEditor.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\AboutThisSite.md" />
+    <Content Include="Views\Home\MarkdownPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

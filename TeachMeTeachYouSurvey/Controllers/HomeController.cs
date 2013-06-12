@@ -65,9 +65,11 @@ namespace TeachMeTeachYouSurvey.Controllers
         {
             var userId = User.Identity.UserId();
             var theme = this.DB.Themes.First(t => t.ThemeId == id && t.Owner == userId);
-            return View(new ThemeEditorViewModel { 
+            return View(new ThemeEditorViewModel
+            {
                 ThemeType = (ThemeType)theme.ThemeType,
-                Description = theme.Description });
+                Description = theme.Description
+            });
         }
 
         [HttpPost, ValidateAntiForgeryToken]
@@ -144,6 +146,12 @@ namespace TeachMeTeachYouSurvey.Controllers
             }
 
             return new EmptyResult();
+        }
+
+        [AllowAnonymous]
+        public ActionResult AboutThisSite()
+        {
+            return View(viewName: "MarkdownPage");
         }
     }
 }

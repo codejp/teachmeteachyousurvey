@@ -60,6 +60,31 @@ h2 {
     margin-bottom: 1em;
 }
 
+#aboutThisSite {
+    background-color: #0083e1;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    padding: 0.5em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top:-0.2em;
+}
+#aboutThisSite .description{
+    font-size:88%;
+    margin-top:0.3em;
+    margin-left:0.5em;
+    line-height:1.3em;
+}
+    #aboutThisSite a {
+        color:#fff;
+    }
+    #aboutThisSite .lnkToDetail {
+        background-color:#0462a5;
+    }
+
+
 .actions {
     margin-top: 0.5em;
 }

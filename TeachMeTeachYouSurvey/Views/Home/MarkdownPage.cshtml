@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "MarkdownPage";
+    var routeValues = this.ViewContext.RouteData.Values;
+    var controller = routeValues["controller"];
+    var action = routeValues["action"];
+    var mdtext = System.IO.File.ReadAllText(Server.MapPath(string.Format("~/Views/{0}/{1}.md", controller, action)));
+}
+@section header{
+    <link href="~/Content/markdownpage.css" rel="stylesheet" />
+}
+<div class="markdown-content">@Html.Raw((new MarkdownSharp.Markdown(loadOptionsFromConfigFile:true)).Transform(mdtext))</div>
+
+<div class="actions">
+    <a href="@Url.Content("~")">戻る</a>
+</div>
