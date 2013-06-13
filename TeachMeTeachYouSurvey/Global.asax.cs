@@ -25,9 +25,6 @@ namespace TeachMeTeachYouSurvey
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<TeachMeTeachYouDB>());
-            Database.SetInitializer(new CreateDatabaseIfNotExists<TeachMeTeachYouDB>());
         }
     }
 }

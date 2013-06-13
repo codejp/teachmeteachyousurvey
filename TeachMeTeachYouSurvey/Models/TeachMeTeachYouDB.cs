@@ -11,5 +11,7 @@ namespace TeachMeTeachYouSurvey.Models
         public DbSet<Theme> Themes { get; set; }
 
         public DbSet<Vote> Votes { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }

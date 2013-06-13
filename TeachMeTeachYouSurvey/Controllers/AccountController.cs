@@ -46,13 +46,27 @@ namespace TeachMeTeachYouSurvey.Controllers
             }
 
             var salt = ConfigurationManager.AppSettings["SaltOfUserID"];
-            var cookie = FormsAuthentication.GetAuthCookie(result.UserName, false);
+            Func<string, string> hash = (s) => FormsAuthentication.HashPasswordForStoringInConfigFile(s, "MD5");
+            var user = new TeachMeTeachYouSurvey.Models.User {
+                UserId = hash(string.Join("@", salt, result.ProviderUserId, result.Provider)),
+                IdProviderName = result.Provider,
+                Name = result.UserName
+            };
+
+            using (var db = new TeachMeTeachYouSurvey.Models.TeachMeTeachYouDB())
+            {
+                if (db.Users.Find(user.UserId) == null)
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+            }
+
+            var cookie = FormsAuthentication.GetAuthCookie(user.Name, false);
             var ticket = FormsAuthentication.Decrypt(cookie.Value);
-            var userId = FormsAuthentication.HashPasswordForStoringInConfigFile(
-                string.Join("@", salt, result.ProviderUserId, result.Provider), "MD5");
             ticket.GetType().InvokeMember("_UserData",
                 BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance,
-                null, ticket, new object[] { userId });
+                null, ticket, new object[] { user.UserId });
             cookie.Value = FormsAuthentication.Encrypt(ticket);
             Response.Cookies.Add(cookie);
 
