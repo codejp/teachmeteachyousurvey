@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -44,9 +45,11 @@ namespace TeachMeTeachYouSurvey.Controllers
                 return Redirect("~/");
             }
 
+            var salt = ConfigurationManager.AppSettings["SaltOfUserID"];
             var cookie = FormsAuthentication.GetAuthCookie(result.UserName, false);
             var ticket = FormsAuthentication.Decrypt(cookie.Value);
-            var userId = FormsAuthentication.HashPasswordForStoringInConfigFile(result.ProviderUserId + "@" + result.Provider, "MD5");
+            var userId = FormsAuthentication.HashPasswordForStoringInConfigFile(
+                string.Join("@", salt, result.ProviderUserId, result.Provider), "MD5");
             ticket.GetType().InvokeMember("_UserData",
                 BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance,
                 null, ticket, new object[] { userId });
