@@ -153,5 +153,11 @@ namespace TeachMeTeachYouSurvey.Controllers
         {
             return View(viewName: "MarkdownPage");
         }
+
+        [AllowAnonymous]
+        public ActionResult CrashTest()
+        {
+            throw new ApplicationException();
+        }
     }
 }
