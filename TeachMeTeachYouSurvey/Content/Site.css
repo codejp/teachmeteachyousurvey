@@ -54,6 +54,7 @@ header {
 
 #body {
     margin: 1em;
+    margin-right: 0;
 }
 
 h2 {
@@ -124,7 +125,8 @@ h2 {
     }
 
 .themes {
-    width: 23em;
+    width: 49%;
+    min-width: 20em;
     display: inline-block;
     float: left;
     border-right: solid 1px #ccc;
@@ -156,75 +158,92 @@ h2 {
     }
 
 .theme {
+    width: 18em;
+    height: 9em;
     background-color: #ddd;
-    margin: 1em;
+    margin: 0.5em;
     padding: 0.5em;
     border-radius: 0.3em;
-    height: 9em;
     -webkit-box-shadow: 1px 1px 3px #666;
     box-shadow: 1px 1px 3px #666;
     position: relative;
+    float: left;
 }
 
-    .theme .description {
-        line-height: 1.2em;
-        font-size: 95%;
+@media only screen and (max-width: 50em) {
+    .themes {
+        width: 90%;
+        border-right: none;
     }
 
+        .themes:last-child {
+            margin-top: 1em;
+            border-top: solid 1px #666;
+            padding-top: 1em;
+        }
+}
 
-    .theme .votes {
-        position: absolute;
-        left: 0.3em;
-        bottom: 0em;
+.theme .description {
+    line-height: 1.2em;
+    font-size: 95%;
+}
+
+
+.theme .votes {
+    position: absolute;
+    left: 0.3em;
+    bottom: 0em;
+    font-size: 90%;
+}
+
+    .theme .votes .voteType {
+        margin-top: 0.1em;
+    }
+
+    .theme .votes .numOfVotes {
+        font-size: 70%;
+        color: #666;
+    }
+
+    .theme .votes .votetip {
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        margin-right: 0.1em;
+    }
+
+.theme .actions {
+    position: absolute;
+    bottom: 0.1em;
+    right: 0.3em;
+}
+
+    .theme .actions .vote.no-votable,
+    .theme .actions .vote.no-votable:hover {
+        background-color: transparent;
+        color: #666;
+        opacity: 1.0;
+        cursor: default;
+    }
+
+.themeEditor {
+    display: inline-block;
+}
+
+    .themeEditor textarea {
+        width: 30em;
+        height: 10em;
+    }
+
+    .themeEditor #charcounter {
+        margin-top: 0.5em;
+        float: right;
+        color: #666;
         font-size: 90%;
     }
 
-        .theme .votes .voteType {
-            margin-top: 0.1em;
-        }
-
-        .theme .votes .numOfVotes {
-            font-size: 70%;
-            color: #666;
-        }
-
-        .theme .votes .votetip {
-            display: inline-block;
-            width: 0.7em;
-            height: 0.7em;
-            margin-right: 0.1em;
-        }
-
-    .theme .actions {
-        position: absolute;
-        bottom: 0.1em;
-        right: 0.3em;
-    }
-
-        .theme .actions .vote.no-votable,
-        .theme .actions .vote.no-votable:hover {
-            background-color: transparent;
-            color: #666;
-            opacity: 1.0;
-            cursor: default;
-        }
-.themeEditor{
-    display:inline-block;
-}
-.themeEditor textarea {
-    width: 30em;
-    height: 10em;
-}
-
-.themeEditor #charcounter{
-    margin-top:0.5em;
-    float:right;
-    color:#666;
-    font-size:90%;
-}
-
 .field-validation-error {
     color: red;
-    margin-top:0.5em;
-    display:inline-block;
+    margin-top: 0.5em;
+    display: inline-block;
 }
