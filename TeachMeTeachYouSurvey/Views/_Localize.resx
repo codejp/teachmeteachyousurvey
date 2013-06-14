@@ -126,4 +126,10 @@
   <data name="TeachYou" xml:space="preserve">
     <value>コレを教えてあげられる</value>
   </data>
+  <data name="VoteAsStudent" xml:space="preserve">
+    <value>私も学びたい</value>
+  </data>
+  <data name="VoteAsTeacher" xml:space="preserve">
+    <value>私も話せるよ</value>
+  </data>
 </root>

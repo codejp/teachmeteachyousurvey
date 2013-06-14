@@ -11,7 +11,7 @@ namespace TeachMeTeachYouSurvey
     {
         public static string UserId(this IIdentity identity)
         {
-            return (identity as FormsIdentity).Ticket.UserData;
+            return identity.IsAuthenticated ? (identity as FormsIdentity).Ticket.UserData : "";
         }
     }
 }

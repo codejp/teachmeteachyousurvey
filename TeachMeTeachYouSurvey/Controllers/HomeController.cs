@@ -103,7 +103,7 @@ namespace TeachMeTeachYouSurvey.Controllers
         }
 
         [HttpPost]
-        public ActionResult Vote(Guid id)
+        public ActionResult Vote(Guid id, VoteType voteType)
         {
             var userId = User.Identity.UserId();
             var theme = this.DB.Themes
@@ -116,7 +116,8 @@ namespace TeachMeTeachYouSurvey.Controllers
                     theme.Votes.Add(new Vote
                     {
                         Owner = userId,
-                        ThemeId = theme.ThemeId
+                        ThemeId = theme.ThemeId,
+                        VoteType = (int)voteType
                     });
                     this.DB.SaveChanges();
                 }

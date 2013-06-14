@@ -23,13 +23,13 @@
     });
 
     // Handle vote/revert action.
-    $(".vote,.revert", ".theme .actions").live('click', function () {
+    $(".vote.votable,.revert", ".theme .actions").live('click', function () {
         var $this = $(this);
         var $theme = $this.closest('.theme');
         $.ajax({
             url: '/Home/' + ($this.hasClass('vote') ? 'Vote' : 'Revert'),
             type: 'POST',
-            data: { id: $theme.data('themeid') }
+            data: { id: $theme.data('themeid'), voteType: $this.data('votetype') }
         })
         .done(function (data) {
             $theme.parent().html(data);

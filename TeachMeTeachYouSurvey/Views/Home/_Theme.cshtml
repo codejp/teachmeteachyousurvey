@@ -1,10 +1,47 @@
 ﻿@model TeachMeTeachYouSurvey.Models.Theme
 @using TeachMeTeachYouSurvey
+@using TeachMeTeachYouSurvey.Models
+@using TeachMeTeachYouSurvey.Views
+@{
+    var userId = User.Identity.UserId();
+    var resManager = _Localize.ResourceManager;
+
+    var isAuthenticated = User.Identity.IsAuthenticated;
+    var isOwner = isAuthenticated == false ? false : userId == Model.Owner;
+    var isVoteAny = Model.Votes.Any(v => v.Owner == userId);
+
+    var isVotable = isAuthenticated && isOwner == false && isVoteAny == false;
+    var isRevertable = isAuthenticated && isOwner == false && isVoteAny;
+}
 <div class="theme" data-themeid="@Model.ThemeId">
 
     <div class="description">@Model.Description</div>
 
-    <div class="votes">
+    <div class="votes actions">
+        @foreach (var voteType in new[] { VoteType.VoteAsStudent, VoteType.VoteAsTeacher })
+        {
+            var votes = Model.Votes.Where(v => v.VoteType == (int)voteType).ToArray();
+            <div class="voteType">
+                <a href="#" class="vote @(isVotable ? "" : "no-")votable" data-votetype="@voteType">@resManager.GetString(voteType.ToString())</a>
+                <span class="numOfVotes">@(votes.Length)票</span>
+                @foreach (var vote in votes)
+                {<span class="votetip" style='@("background-color: #" + vote.Owner.Substring(0, 6))'></span>}
+            </div>
+        }
+    </div>
+    <div class="actions">
+        @if (isOwner)
+        {
+            <a href="#" class="edit">編集</a>
+            <a href="#" class="delete">削除</a>
+        }
+        @if (isRevertable)
+        {
+            <a href="#" class="revert">撤回</a>
+        }
+    </div>
+
+    @*    <div class="votes">
         <span class="numOfVotes">@Model.Votes.Count() 票</span>
         @foreach (var vote in Model.Votes)
         {
@@ -22,17 +59,18 @@
             }
             else
             {
+                var myVote = Model.Votes.FirstOrDefault(v => v.Owner == User.Identity.UserId());
                 if (Model.Votes.Any(v => v.Owner == User.Identity.UserId()))
                 {
                 <a href="#" class="revert">撤回</a>
                 }
                 else
                 { 
-                <a href="#" class="vote">投票</a>
+                <a href="#" class="vote">私も知りたい</a>
                 }
             }
         </div>
-    }
+    }*@
 </div>
 
 

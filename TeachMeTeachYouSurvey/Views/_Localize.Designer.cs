@@ -86,5 +86,23 @@ namespace TeachMeTeachYouSurvey.Views {
                 return ResourceManager.GetString("TeachYou", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 私も学びたい.
+        /// </summary>
+        public static string VoteAsStudent {
+            get {
+                return ResourceManager.GetString("VoteAsStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 私も話せるよ.
+        /// </summary>
+        public static string VoteAsTeacher {
+            get {
+                return ResourceManager.GetString("VoteAsTeacher", resourceCulture);
+            }
+        }
     }
 }

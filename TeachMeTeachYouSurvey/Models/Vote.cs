@@ -14,6 +14,8 @@ namespace TeachMeTeachYouSurvey.Models
 
         public Guid ThemeId { get; set; }
 
+        public int VoteType { get; set; }
+
         public string Owner { get; set; }
 
         public Vote()
