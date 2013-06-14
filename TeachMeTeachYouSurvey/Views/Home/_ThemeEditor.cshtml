@@ -4,18 +4,20 @@
 <h2>@_Localize.ResourceManager.GetString(Model.ThemeType.ToString()) - @ViewBag.Title</h2>
 
 <div class="themeEditor">
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    @Html.HiddenFor(model => model.ThemeType)
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ThemeType)
 
-    @Html.TextAreaFor(model => model.Description)
-    @Html.ValidationMessageFor(model => model.Description)
+        <div>@Html.TextAreaFor(model => model.Description)</div>
+        <div id="charcounter">1/100</div>
 
-    <p class="actions">
-        <input type="submit" value="OK" class="ok"/>
-        @Html.ActionLink("キャンセル", "Index", null, new { @class = "cancel" })
-    </p>
-}
+        <div>@Html.ValidationMessageFor(model => model.Description)</div>
+
+        <p class="actions">
+            <input type="submit" value="OK" class="ok" />
+            @Html.ActionLink("キャンセル", "Index", null, new { @class = "cancel" })
+        </p>
+    }
 </div>

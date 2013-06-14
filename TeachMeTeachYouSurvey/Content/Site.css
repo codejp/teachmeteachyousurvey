@@ -160,11 +160,17 @@ h2 {
     margin: 1em;
     padding: 0.5em;
     border-radius: 0.3em;
-    height: 8em;
+    height: 9em;
     -webkit-box-shadow: 1px 1px 3px #666;
     box-shadow: 1px 1px 3px #666;
     position: relative;
 }
+
+    .theme .description {
+        line-height: 1.2em;
+        font-size: 95%;
+    }
+
 
     .theme .votes {
         position: absolute;
@@ -191,7 +197,7 @@ h2 {
 
     .theme .actions {
         position: absolute;
-        bottom: 0.5em;
+        bottom: 0.1em;
         right: 0.3em;
     }
 
@@ -202,8 +208,23 @@ h2 {
             opacity: 1.0;
             cursor: default;
         }
-
+.themeEditor{
+    display:inline-block;
+}
 .themeEditor textarea {
     width: 30em;
     height: 10em;
+}
+
+.themeEditor #charcounter{
+    margin-top:0.5em;
+    float:right;
+    color:#666;
+    font-size:90%;
+}
+
+.field-validation-error {
+    color: red;
+    margin-top:0.5em;
+    display:inline-block;
 }

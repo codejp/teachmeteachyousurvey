@@ -11,8 +11,8 @@ namespace TeachMeTeachYouSurvey.Models
     {
         public ThemeType ThemeType { get; set; }
 
-        [Required, AllowHtml]
-        [StringLength(maximumLength: 400)]
+        [Required(ErrorMessage="入力してください。"), AllowHtml]
+        [StringLength(maximumLength: 125, ErrorMessage="{1}文字までで入力してください。")]
         public string Description { get; set; }
     }
 }
