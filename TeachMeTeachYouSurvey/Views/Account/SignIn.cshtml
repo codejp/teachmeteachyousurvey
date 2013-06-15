@@ -11,6 +11,29 @@
     @Html.AntiForgeryToken()
     foreach (AuthenticationClientData p in Model)
     {
-        <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
+
+        string imageName;
+        switch (p.DisplayName)
+        {
+            case "Facebook":
+                imageName = @"/Content/images/facebook.png";
+                break;
+            case "Twitter":
+                imageName = @"/Content/images/twitter.png";
+                break;
+            case "Microsoft":
+                imageName = @"/Content/images/microsoft.png";
+                break;
+            case "Google":
+                imageName = @"/Content/images/google_plus.png";
+                break;
+            default:
+                imageName = "";
+                break;
+        }
+        <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">
+            <img src="@imageName" />
+            @p.DisplayName
+        </button>
     }
 }
