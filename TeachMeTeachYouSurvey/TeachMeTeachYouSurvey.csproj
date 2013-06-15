@@ -223,11 +223,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\add this.png" />
     <Content Include="Content\images\codelogo-mono-black.png" />
+    <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\google_plus.png" />
+    <Content Include="Content\images\microsoft.png" />
+    <Content Include="Content\images\SocialIcons.txt" />
+    <Content Include="Content\images\twitter.png" />
     <Content Include="Content\markdownpage.css" />
+    <Content Include="Facebook\Docs\content\images\FBCoreSettings.png" />
+    <Content Include="Facebook\Docs\content\images\FBCreateApplication.png" />
+    <Content Include="Facebook\Docs\content\images\webx-bkg.png" />
+    <Content Include="Facebook\Docs\content\images\webx-content-bkg.jpg" />
+    <Content Include="Facebook\Docs\content\images\webx-icon.png" />
+    <Content Include="Facebook\Docs\content\images\wm-mysite-settings.png" />
+    <Content Include="Facebook\Docs\content\images\wm-site-settings.png" />
+    <Content Include="Facebook\Docs\content\Site.css" />
+    <Content Include="Facebook\Docs\reference.htm" />
+    <Content Include="Facebook\Docs\startHere.htm" />
     <Content Include="favicon.ico" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
+    <Content Include="Facebook\Login.cshtml" />
+    <Content Include="App_Code\Facebook.cshtml" />
+    <Content Include="App_Code\TwitterGoodies.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Content\html5reset-1.6.1.css" />
     <Content Include="Scripts\account.js" />
