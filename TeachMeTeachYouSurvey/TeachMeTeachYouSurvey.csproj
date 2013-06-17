@@ -199,6 +199,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\EnumT.cs" />
+    <Compile Include="Code\GitHubOAuth2\ExtendedWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\GitHubOAuth2\GitHubOAuth2Client.cs" />
     <Compile Include="Code\IIdentityExtension.cs" />
     <Compile Include="Code\LamdaResult.cs" />
     <Compile Include="Code\LogToAzureBlobAndSendMailListener.cs" />

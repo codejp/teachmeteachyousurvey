@@ -50,7 +50,9 @@ namespace TeachMeTeachYouSurvey.Controllers
             var user = new TeachMeTeachYouSurvey.Models.User {
                 UserId = hash(string.Join("@", salt, result.ProviderUserId, result.Provider)),
                 IdProviderName = result.Provider,
-                Name = result.UserName
+
+                // terrible hack...
+                Name = result.Provider != "github" ? result.UserName : result.ExtraData["login"]
             };
 
             using (var db = new TeachMeTeachYouSurvey.Models.TeachMeTeachYouDB())

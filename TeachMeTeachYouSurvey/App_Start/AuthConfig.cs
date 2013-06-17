@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using Microsoft.Web.WebPages.OAuth;
 using Newtonsoft.Json;
+using JohnnyCode.GitHubOAuth2;
 
 namespace TeachMeTeachYouSurvey
 {
@@ -15,7 +16,7 @@ namespace TeachMeTeachYouSurvey
             // you must update this site. For more information visit http://go.microsoft.com/fwlink/?LinkID=252166
 
             var appSettings = ConfigurationManager.AppSettings;
-            Func<string,Dictionary<string,string>> getOAuthSetting = key => 
+            Func<string, Dictionary<string, string>> getOAuthSetting = key =>
                 JsonConvert.DeserializeObject<Dictionary<string, string>>(appSettings[key]);
 
             var oauthMicrosoftSetting = getOAuthSetting("OAuth.Microsoft");
@@ -34,6 +35,11 @@ namespace TeachMeTeachYouSurvey
                 oauthFacebookSetting["appSecret"]);
 
             OAuthWebSecurity.RegisterGoogleClient();
+
+            var oauthGitHubSetting = getOAuthSetting("OAuth.GitHub");
+            OAuthWebSecurity.RegisterClient(new GitHubOAuth2Client(
+                oauthGitHubSetting["clientId"],
+                oauthGitHubSetting["clientSecret"]), "GitHub", null);
         }
     }
 }
