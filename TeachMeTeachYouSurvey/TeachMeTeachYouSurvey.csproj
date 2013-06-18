@@ -60,6 +60,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -208,6 +209,7 @@
     <Compile Include="Code\LogToAzureBlobAndSendMailListener.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RSSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,6 +232,8 @@
     <Content Include="Content\images\add this.png" />
     <Content Include="Content\images\codelogo-mono-black.png" />
     <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\feed-icon-14x14.png" />
+    <Content Include="Content\images\feed-icon-28x28.png" />
     <Content Include="Content\images\github.png" />
     <Content Include="Content\images\google_plus.png" />
     <Content Include="Content\images\microsoft.png" />
