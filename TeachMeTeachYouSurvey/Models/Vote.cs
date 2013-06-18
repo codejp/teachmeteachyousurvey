@@ -20,6 +20,8 @@ namespace TeachMeTeachYouSurvey.Models
 
         public DateTime CreateAt { get; set; }
 
+        public virtual Theme Theme { get; set; }
+
         public Vote()
         {
             this.VoteId = Guid.NewGuid();
