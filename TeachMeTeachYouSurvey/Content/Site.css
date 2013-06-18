@@ -52,6 +52,22 @@ header {
     color: #fff;
 }
 
+#links{
+    float:right;
+}
+
+#lnkRSS {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-image: url(images/feed-icon-28x28.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -ms-zoom: 0.7;
+    zoom: 0.7;
+    margin-left:0.5em;
+}
+
 #body {
     margin: 1em;
     margin-right: 0;

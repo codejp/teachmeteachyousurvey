@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - @_Localize.SiteTitle</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="@Url.Action("Index", "RSS")" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @RenderSection("header", required: false)
@@ -16,6 +17,9 @@
         <section id="siteTitle">
             <a id="officialSiteLnk" href="http://www.codejapan.jp/" target="_blank" title="Code 2013"></a>
             <span>@_Localize.SiteTitle</span>
+        </section>
+        <section id="links">
+            <a id="lnkRSS" href="@Url.Action("Index", "RSS")" target="_blank"></a>
         </section>
         <section id="signInOut">
             @RenderSection("signInOut", required: false)
