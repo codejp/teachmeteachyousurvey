@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TeachMeTeachYouSurvey.Models;
 
 namespace TeachMeTeachYouSurvey
 {
@@ -24,6 +26,8 @@ namespace TeachMeTeachYouSurvey
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            Database.SetInitializer<TeachMeTeachYouDB>(null);
         }
 
         protected void Application_Error(object sender, EventArgs e)

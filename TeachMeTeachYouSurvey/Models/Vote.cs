@@ -18,9 +18,12 @@ namespace TeachMeTeachYouSurvey.Models
 
         public string Owner { get; set; }
 
+        public DateTime CreateAt { get; set; }
+
         public Vote()
         {
             this.VoteId = Guid.NewGuid();
+            this.CreateAt = DateTime.UtcNow;
         }
     }
 }
