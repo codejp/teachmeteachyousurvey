@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace TeachMeTeachYouSurvey.Models
 {
@@ -12,6 +13,7 @@ namespace TeachMeTeachYouSurvey.Models
         [Key]
         public Guid ThemeId { get; set; }
 
+        [JsonConverter(typeof(JsonEnumConverter<ThemeType>))]
         public int ThemeType { get; set; }
 
         public string Owner { get; set; }

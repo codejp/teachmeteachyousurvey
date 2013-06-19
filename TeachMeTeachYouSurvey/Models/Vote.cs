@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace TeachMeTeachYouSurvey.Models
 {
+    [Serializable, DataContract]
     public class Vote
     {
-        [Key]
+        [Key, DataMember]
         public Guid VoteId { get; set; }
 
+        [JsonIgnore]
         public Guid ThemeId { get; set; }
 
+        [JsonConverter(typeof(JsonEnumConverter<VoteType>)), DataMember]
         public int VoteType { get; set; }
 
+        [DataMember]
         public string Owner { get; set; }
 
+        [DataMember]
         public DateTime CreateAt { get; set; }
 
+        [JsonIgnore]
         public virtual Theme Theme { get; set; }
 
         public Vote()
