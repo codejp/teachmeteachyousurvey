@@ -1,4 +1,5 @@
 ﻿@using TeachMeTeachYouSurvey.Views
+@using Newtonsoft.Json
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,10 +26,38 @@
             @RenderSection("signInOut", required: false)
         </section>
     </header>
+
     @RenderSection("preBody", required: false)
+
     <div id="body">
         @RenderBody()
     </div>
+
+    <footer>
+        <section id="contributors">
+            <h4>contributors</h4>
+            <ul>
+            @{
+                var contributors = JsonConvert.DeserializeObject<string[]>(File.ReadAllText(Server.MapPath("~/contributors.js")));
+                foreach (var contributor in contributors)
+                {
+                    <li><a href="https://github.com/@contributor" target="_blank">@contributor</a></li>
+                }
+            }
+            </ul>
+        </section>
+
+        <section id="source">
+            <h4>source code</h4>
+            <p><a href="https://github.com/codejp/teachmeteachyousurvey" target="_blank" class="github">https://github.com/codejp/teachmeteachyousurvey</a></p>
+        </section>
+
+        <section id="hosting">
+            <h4>hosted by</h4>
+            <p><a href="https://appharbor.com/" target="_blank" class="appharbor">AppHarbor</a></p>
+        </section>
+
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/js")

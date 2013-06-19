@@ -261,6 +261,7 @@
     <Content Include="App_Code\TwitterGoodies.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Content\html5reset-1.6.1.css" />
+    <Content Include="contributors.js" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\account.js" />
     <Content Include="Scripts\themeEditor.js" />

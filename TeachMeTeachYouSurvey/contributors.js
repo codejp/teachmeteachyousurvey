@@ -1,0 +1,6 @@
+﻿[
+    'ishisaka',
+    'sandinist',
+    'kazuk',
+    'jsakamoto'
+]
