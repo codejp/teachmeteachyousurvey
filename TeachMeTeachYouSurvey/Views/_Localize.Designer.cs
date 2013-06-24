@@ -88,6 +88,15 @@ namespace TeachMeTeachYouSurvey.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code2013 きんぎょばちコーナー - teach me/teach you - テーマ投稿&amp;投票 絶賛募集中! {0} #codejp.
+        /// </summary>
+        public static string TweetText {
+            get {
+                return ResourceManager.GetString("TweetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 私も学びたい.
         /// </summary>
         public static string VoteAsStudent {

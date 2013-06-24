@@ -1,5 +1,8 @@
-﻿@using TeachMeTeachYouSurvey.Views
+﻿@using TeachMeTeachYouSurvey.Code
+@using TeachMeTeachYouSurvey.Views
 @using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using System.Configuration
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,8 +11,8 @@
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="Code 2013 きんぎょばち-teach me/teach you- テーマ募集&投票" />
     <meta property="og:description" content="8月3-4日の1泊2日で北海道定山渓で開催のプログラマ向けイベント Code 2013 の、きんぎょばちコーナーでとりあげるプログラミングネタを募集&投票受付中!" />
-    <meta property="og:url" content="@Request.Url.GetLeftPart(UriPartial.Scheme | UriPartial.Authority)" />
-    <meta property="og:image" content="@Request.Url.GetLeftPart(UriPartial.Scheme | UriPartial.Authority)/Content/images/ogpimage.png" />
+    <meta property="og:url" content="@Url.AppUrl()" />
+    <meta property="og:image" content="@Url.AppUrl()/Content/images/ogpimage.png" />
     <meta name="keywords" content="Code 2013,CodeJP" />
     <meta name="description" content="8月3-4日の1泊2日で北海道定山渓で開催のプログラマ向けイベント Code 2013 の、きんぎょばちコーナーでとりあげるプログラミングネタを募集&投票受付中!" />
     <title>@ViewBag.Title - @_Localize.SiteTitle</title>
@@ -21,6 +24,14 @@
     @RenderSection("header", required: false)
 </head>
 <body>
+    <div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=388029927980906";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <header>
         <section id="siteTitle">
             <a id="officialSiteLnk" href="http://www.codejapan.jp/" target="_blank" title="Code 2013"></a>
@@ -68,7 +79,15 @@
             <h4>hosted by</h4>
             <p><a href="https://appharbor.com/" target="_blank" class="appharbor">AppHarbor</a></p>
         </section>
+        <section id="social">
+            @TwitterGoodies.TweetButton(
+                tweetText:string.Format(_Localize.TweetText, Url.AppUrl()),
+                url: Url.AppUrl(),
+                dataCount: TwitterGoodies.DataCount.Horizontal)
 
+            <div class="fb-like" data-href="@Url.AppUrl()" data-send="false" data-layout="button_count" data-width="280" data-show-faces="false" data-font="segoe ui" data-colorscheme="dark"></div>
+
+        </section>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")

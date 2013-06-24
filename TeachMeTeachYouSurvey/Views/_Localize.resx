@@ -126,6 +126,9 @@
   <data name="TeachYou" xml:space="preserve">
     <value>コレを教えてあげられる</value>
   </data>
+  <data name="TweetText" xml:space="preserve">
+    <value>Code2013 きんぎょばちコーナー - teach me/teach you - テーマ投稿&amp;投票 絶賛募集中! {0} #codejp</value>
+  </data>
   <data name="VoteAsStudent" xml:space="preserve">
     <value>私も学びたい</value>
   </data>
