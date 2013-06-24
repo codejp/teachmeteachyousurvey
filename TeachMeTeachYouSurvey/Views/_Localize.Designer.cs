@@ -88,7 +88,7 @@ namespace TeachMeTeachYouSurvey.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code2013 きんぎょばちコーナー - teach me/teach you - テーマ投稿&amp;投票 絶賛募集中! {0} #codejp.
+        ///   Looks up a localized string similar to Code2013 きんぎょばちコーナー - teach me/teach you - テーマ投稿&amp;投票 絶賛募集中! #codejp.
         /// </summary>
         public static string TweetText {
             get {
